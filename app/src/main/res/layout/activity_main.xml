@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/base_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:text="Base"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tax_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="24%"
+        app:layout_constraintEnd_toEndOf="@+id/base_label"
+        app:layout_constraintTop_toBottomOf="@+id/base_label"
+        tools:text="24%" />
+
+    <TextView
+        android:id="@+id/tip_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Tip"
+        app:layout_constraintEnd_toEndOf="@+id/tax_label"
+        app:layout_constraintTop_toBottomOf="@+id/tax_label" />
+
+    <TextView
+        android:id="@+id/total_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Total"
+        app:layout_constraintEnd_toEndOf="@+id/tip_label"
+        app:layout_constraintTop_toBottomOf="@+id/tip_label" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:max="40"
+        app:layout_constraintBottom_toBottomOf="@+id/tax_label"
+        app:layout_constraintStart_toStartOf="@+id/edit_base"
+        app:layout_constraintTop_toTopOf="@+id/tax_label" />
+
+    <TextView
+        android:id="@+id/tip_shown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="@+id/tip_label"
+        app:layout_constraintStart_toStartOf="@+id/seekBar"
+        app:layout_constraintTop_toTopOf="@+id/tip_label"
+        tools:text="13" />
+
+    <TextView
+        android:id="@+id/total_shown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="@+id/total_label"
+        app:layout_constraintStart_toStartOf="@+id/tip_shown"
+        app:layout_constraintTop_toTopOf="@+id/total_label"
+        tools:text="103" />
+
+    <EditText
+        android:id="@+id/edit_base"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="8"
+        android:hint="Base Amount"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/base_label"
+        app:layout_constraintStart_toEndOf="@+id/base_label"
+        app:layout_constraintTop_toTopOf="@+id/base_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
